@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>G+Money · Support &amp; Privacy</title>
+<meta name="description" content="Official support center for G+Money — the offline travel currency converter &amp; expense tracker. Contact, FAQ and privacy policy. Collects no personal data. G+Money 官方支援中心。">
+<meta property="og:title" content="G+Money · Support &amp; Privacy">
+<meta property="og:description" content="Support, FAQ and privacy policy for G+Money — travel currency converter &amp; offline expense tracker. No account, no tracking, no data collection.">
+<meta property="og:image" content="icon.png">
+<link rel="icon" href="icon.png">
+<style>
+  :root{
+    --ink:#2a2014; --ink2:#5c4f3b; --muted:#8a7860;
+    --line:#f1e7d6; --line2:#e8dcc6;
+    --bg:#fff8ee; --panel:#ffffff;
+    --tangerine:#f2620e; --tangerine-ink:#cc5109; --tangerine-soft:#fdeede;
+    --gold:#f2a93b; --gold-light:#ffcb63;
+    --blue:#2f77e5;
+    --shadow:0 1px 2px rgba(120,70,10,.05), 0 14px 36px -18px rgba(200,120,30,.28);
+    --shadow-lg:0 3px 8px rgba(120,70,10,.07), 0 36px 70px -30px rgba(200,120,30,.40);
+    --radius:20px; --maxw:980px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0; color:var(--ink); background:var(--bg);
+    font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI","PingFang TC","Noto Sans TC",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:16.5px; line-height:1.7; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;}
+  a{color:var(--tangerine-ink); text-decoration:none}
+  a:hover{text-decoration:underline}
+  .container{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+  .zh{color:var(--muted); font-weight:500}
+  .eyebrow{font-size:.72rem; font-weight:800; letter-spacing:2.2px; text-transform:uppercase; color:var(--tangerine); margin:0 0 12px}
+
+  header.hero{position:relative; overflow:hidden; padding:74px 0 60px;
+    background:linear-gradient(160deg,#fff6e8 0%,#ffeacb 55%,#ffe0b4 100%); border-bottom:1px solid var(--line2)}
+  .hero-glow{position:absolute; inset:-30% 30% auto -10%; height:420px; background:radial-gradient(closest-side,rgba(255,196,110,.55),transparent); filter:blur(10px); pointer-events:none}
+  .brandrow{display:flex; align-items:center; gap:16px; margin-bottom:22px}
+  .brandrow img{width:76px; height:76px; border-radius:19px; box-shadow:var(--shadow)}
+  .brandrow h1{font-size:1.7rem; margin:0; letter-spacing:-.4px}
+  .brandrow h1 b{color:var(--tangerine)}
+  .brandrow p{margin:2px 0 0; color:var(--ink2); font-weight:600}
+  .hero h2{font-size:clamp(1.8rem,4.6vw,2.9rem); line-height:1.12; margin:.2em 0 .35em; letter-spacing:-1px; max-width:18ch}
+  .hero .lede{font-size:1.12rem; color:var(--ink2); max-width:60ch; margin:0}
+  .cta{display:inline-flex; align-items:center; gap:9px; margin-top:26px; padding:14px 24px; border-radius:999px;
+    background:linear-gradient(135deg,#fb8a3c,#f2620e); color:#fff; font-weight:800; box-shadow:var(--shadow); border:1px solid rgba(255,255,255,.5)}
+  .cta:hover{text-decoration:none; filter:brightness(1.03)}
+
+  section{padding:58px 0}
+  section h3{font-size:1.5rem; letter-spacing:-.3px; margin:0 0 8px}
+  .sub{color:var(--muted); margin:0 0 28px; max-width:62ch}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(248px,1fr)); gap:18px}
+  .card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:22px 22px 20px; box-shadow:var(--shadow)}
+  .card .ic{width:42px; height:42px; border-radius:12px; display:grid; place-items:center; font-size:21px; margin-bottom:13px; background:var(--tangerine-soft)}
+  .card h4{margin:0 0 5px; font-size:1.06rem}
+  .card p{margin:0; color:var(--ink2); font-size:.97rem}
+
+  .faq{max-width:760px}
+  details{background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:4px 20px; margin-bottom:12px; box-shadow:var(--shadow)}
+  details[open]{border-color:var(--line2)}
+  summary{cursor:pointer; font-weight:700; padding:16px 0; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:14px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+"; color:var(--tangerine); font-weight:800; font-size:1.3rem}
+  details[open] summary::after{content:"–"}
+  details .a{padding:0 0 18px; color:var(--ink2)}
+
+  .contact{background:linear-gradient(160deg,#fff6e8,#ffe9c8); border:1px solid var(--line2); border-radius:24px; padding:38px 30px; text-align:center; box-shadow:var(--shadow-lg)}
+  .contact h3{margin:0 0 6px}
+  .mail{display:inline-block; margin-top:14px; font-size:1.15rem; font-weight:800; color:var(--tangerine-ink)}
+
+  .privacy{background:var(--panel); border:1px solid var(--line); border-radius:24px; padding:36px 30px; box-shadow:var(--shadow)}
+  .privacy h4{margin:22px 0 6px; font-size:1.08rem}
+  .privacy ul{margin:6px 0 0; padding-left:20px; color:var(--ink2)}
+  .privacy li{margin:5px 0}
+  .badge{display:inline-flex; align-items:center; gap:7px; background:var(--tangerine-soft); color:var(--tangerine-ink); font-weight:800; font-size:.82rem; padding:7px 13px; border-radius:999px; margin-bottom:8px}
+
+  footer{padding:40px 0 56px; color:var(--muted); border-top:1px solid var(--line); text-align:center; font-size:.92rem}
+  footer a{color:var(--ink2)}
+  @media (max-width:560px){ .brandrow img{width:60px;height:60px} section{padding:46px 0} }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="brandrow">
+      <img src="icon.png" alt="G+Money icon">
+      <div>
+        <h1><b>G+</b>Money</h1>
+        <p>Travel currency &amp; expenses · <span class="zh">旅遊換匯與記帳</span></p>
+      </div>
+    </div>
+    <p class="eyebrow">Support Center</p>
+    <h2>Help, answers &amp; your privacy — all in one place.</h2>
+    <p class="lede">G+Money converts currencies and tracks every trip expense, fully offline. Need a hand or want to know how your data is handled? You're in the right spot.</p>
+    <a class="cta" href="#contact">✉️ Contact support</a>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <p class="eyebrow">Quick start</p>
+    <h3>Getting the most out of G+Money</h3>
+    <p class="sub">Set it once, then log as you go — even with no signal.</p>
+    <div class="grid">
+      <div class="card"><div class="ic">💱</div><h4>Live or manual rates</h4><p>Rates update automatically when you're online, or tap the rate bar to set the exact rate you got. Both work offline.</p></div>
+      <div class="card"><div class="ic">✈️</div><h4>100% offline</h4><p>No Wi‑Fi, no data, no problem. Everything is computed and stored on your device.</p></div>
+      <div class="card"><div class="ic">🧾</div><h4>Log by category</h4><p>Add what you spent in the local currency; G+Money shows it in your home currency and sorts it by category.</p></div>
+      <div class="card"><div class="ic">🎯</div><h4>Daily budget</h4><p>Tap “Set daily goal” on the Convert screen to track today's spending against a budget you choose.</p></div>
+      <div class="card"><div class="ic">📊</div><h4>Summary &amp; export</h4><p>Filter by category and date in the Summary tab, then export to text or CSV to share or keep.</p></div>
+      <div class="card"><div class="ic">🌐</div><h4>17 languages</h4><p>The app auto‑detects your language and you can switch any time in Settings.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="container">
+    <p class="eyebrow">FAQ</p>
+    <h3>Frequently asked questions</h3>
+    <div class="faq" style="margin-top:22px">
+      <details><summary>How do I change my home currency?</summary><div class="a">Open Settings (top‑right gear) → Home currency, and pick from 50+ world currencies. Every total updates instantly.</div></details>
+      <details><summary>Do exchange rates work without internet?</summary><div class="a">Yes. G+Money caches the latest rates so conversions keep working offline. You can also set a manual rate by tapping the rate bar on the Convert screen.</div></details>
+      <details><summary>How do I set a daily budget / goal?</summary><div class="a">On the Convert screen, tap “Set daily goal” in the summary card and enter an amount. You'll see today's spending tracked against it, with how much is left.</div></details>
+      <details><summary>Can I add my own expense categories?</summary><div class="a">Yes — on the Convert screen, tap the dashed “+ Add category” chip at the start of the category row (or add one in Settings). New categories appear first.</div></details>
+      <details><summary>How do I export or back up my data?</summary><div class="a">In the Summary tab, use Export (text) or CSV to share your records. For a full backup, use Settings → Backup, and Restore to import it back.</div></details>
+      <details><summary>Is there a subscription?</summary><div class="a">No. G+Money is a one‑time purchase — pay once and it's yours, with no subscriptions, no ads and no in‑app purchases.</div></details>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="container">
+    <div class="contact" id="contact">
+      <p class="eyebrow" style="color:var(--tangerine)">We're here to help</p>
+      <h3>Contact us</h3>
+      <p style="margin:0; color:var(--ink2)">Questions, feedback or a feature request? We usually reply within 1–2 days.</p>
+      <a class="mail" href="mailto:hourstag.app@gmail.com?subject=G%2BMoney%20Support">hourstag.app@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0" id="privacy">
+  <div class="container">
+    <div class="privacy">
+      <span class="badge">🔒 Privacy first</span>
+      <h3 style="margin-top:4px">Privacy Policy</h3>
+      <p style="color:var(--muted); margin:0 0 6px">Last updated: 16 June 2026</p>
+      <p style="color:var(--ink2)">G+Money is built to be private by design. The short version: <strong>we don't collect anything.</strong></p>
+
+      <h4>What we collect</h4>
+      <ul>
+        <li><strong>Nothing.</strong> G+Money has no account system and no sign‑up. We do not collect, transmit or sell any personal information.</li>
+        <li>Your expenses, rates, categories and settings are stored <strong>only on your device</strong>.</li>
+      </ul>
+
+      <h4>Network use</h4>
+      <ul>
+        <li>The only optional network request is fetching current exchange rates. This sends no personal data — just a request for public rate information.</li>
+        <li>With automatic rates turned off, the app makes no network requests at all.</li>
+      </ul>
+
+      <h4>No tracking</h4>
+      <ul>
+        <li>No analytics, no advertising identifiers, no third‑party trackers or SDKs.</li>
+        <li>We have no way to identify you or your device.</li>
+      </ul>
+
+      <h4>Your data &amp; control</h4>
+      <ul>
+        <li>You can export your data (text/CSV) or delete it any time from within the app. Deleting the app removes all of its data from your device.</li>
+      </ul>
+
+      <h4>Children's privacy</h4>
+      <ul>
+        <li>G+Money does not collect data from anyone, including children.</li>
+      </ul>
+
+      <h4>Contact</h4>
+      <ul>
+        <li>Questions about this policy? Email <a href="mailto:hourstag.app@gmail.com?subject=G%2BMoney%20Privacy">hourstag.app@gmail.com</a>.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 G+Money · <a href="#privacy">Privacy</a> · <a href="mailto:hourstag.app@gmail.com">Support</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
