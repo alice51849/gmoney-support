@@ -2,196 +2,356 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>G+Money · Support &amp; Privacy</title>
-<meta name="description" content="Official support center for G+Money — the offline travel currency converter &amp; expense tracker. Contact, FAQ and privacy policy. Collects no personal data. G+Money 官方支援中心。">
+<meta name="description" content="Official support &amp; privacy center for G+Money — the premium offline travel currency converter &amp; expense tracker. No account, no tracking, no data collected. G+Money 官方支援與隱私中心。">
+<meta name="theme-color" content="#E6A532">
 <meta property="og:title" content="G+Money · Support &amp; Privacy">
-<meta property="og:description" content="Support, FAQ and privacy policy for G+Money — travel currency converter &amp; offline expense tracker. No account, no tracking, no data collection.">
-<meta property="og:image" content="icon.png">
-<link rel="icon" href="icon.png">
+<meta property="og:description" content="Support, FAQ and privacy policy for G+Money — a private, offline travel currency converter &amp; expense tracker.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="icon.png?v=coin">
+<link rel="icon" href="icon.png?v=coin">
+<link rel="apple-touch-icon" href="icon.png?v=coin">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+:root{
+  --gold:#E6A532; --gold-deep:#C8841A; --tangerine:#F2620E; --coral:#FF7A3D;
+  --cream:#FFF9F0; --paper:#FFFFFF; --line:rgba(120,84,28,.14);
+  --ink:#2A2014; --ink2:#6A5A44; --muted:#9C8A70;
+  --glass:rgba(255,253,248,.62); --glass-brd:rgba(255,255,255,.7);
+  --shadow:0 22px 60px -28px rgba(150,96,20,.45);
+  --grad:linear-gradient(120deg,#FFC95A,#F2A93B 38%,#F2620E);
+  --grad-soft:linear-gradient(120deg,#FFD884,#F2A93B);
+  --maxw:1120px; --r:22px;
+}
+@media (prefers-color-scheme:dark){
   :root{
-    --ink:#2a2014; --ink2:#5c4f3b; --muted:#8a7860;
-    --line:#f1e7d6; --line2:#e8dcc6;
-    --bg:#fff8ee; --panel:#ffffff;
-    --tangerine:#f2620e; --tangerine-ink:#cc5109; --tangerine-soft:#fdeede;
-    --gold:#f2a93b; --gold-light:#ffcb63;
-    --blue:#2f77e5;
-    --shadow:0 1px 2px rgba(120,70,10,.05), 0 14px 36px -18px rgba(200,120,30,.28);
-    --shadow-lg:0 3px 8px rgba(120,70,10,.07), 0 36px 70px -30px rgba(200,120,30,.40);
-    --radius:20px; --maxw:980px;
+    --cream:#15110C; --paper:#1E1812; --line:rgba(255,210,150,.12);
+    --ink:#F6EEE0; --ink2:#C9B89C; --muted:#9A876B;
+    --glass:rgba(36,28,20,.55); --glass-brd:rgba(255,220,160,.14);
+    --shadow:0 26px 70px -30px rgba(0,0,0,.7);
   }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0; color:var(--ink); background:var(--bg);
-    font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI","PingFang TC","Noto Sans TC",Roboto,"Helvetica Neue",Arial,sans-serif;
-    font-size:16.5px; line-height:1.7; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;}
-  a{color:var(--tangerine-ink); text-decoration:none}
-  a:hover{text-decoration:underline}
-  .container{max-width:var(--maxw); margin:0 auto; padding:0 22px}
-  .zh{color:var(--muted); font-weight:500}
-  .eyebrow{font-size:.72rem; font-weight:800; letter-spacing:2.2px; text-transform:uppercase; color:var(--tangerine); margin:0 0 12px}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+body{
+  margin:0; font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ink); background:var(--cream); line-height:1.65; overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+/* animated warm gradient mesh background */
+.mesh{position:fixed; inset:-20% -10% auto; height:80vh; z-index:-2; filter:blur(60px); opacity:.9; pointer-events:none}
+.mesh i{position:absolute; border-radius:50%; mix-blend-mode:screen; animation:float 18s ease-in-out infinite}
+.mesh i:nth-child(1){width:46vw;height:46vw;left:-6vw;top:-10vw;background:radial-gradient(circle,#FFC95A,transparent 62%)}
+.mesh i:nth-child(2){width:42vw;height:42vw;right:-8vw;top:-4vw;background:radial-gradient(circle,#FF8A4D,transparent 60%);animation-delay:-5s}
+.mesh i:nth-child(3){width:38vw;height:38vw;left:30vw;top:6vw;background:radial-gradient(circle,#F2620E,transparent 58%);animation-delay:-9s;opacity:.7}
+@media (prefers-color-scheme:dark){.mesh{opacity:.5}}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(3vw,2vw) scale(1.08)}66%{transform:translate(-2vw,1vw) scale(.96)}}
+.grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
-  header.hero{position:relative; overflow:hidden; padding:74px 0 60px;
-    background:linear-gradient(160deg,#fff6e8 0%,#ffeacb 55%,#ffe0b4 100%); border-bottom:1px solid var(--line2)}
-  .hero-glow{position:absolute; inset:-30% 30% auto -10%; height:420px; background:radial-gradient(closest-side,rgba(255,196,110,.55),transparent); filter:blur(10px); pointer-events:none}
-  .brandrow{display:flex; align-items:center; gap:16px; margin-bottom:22px}
-  .brandrow img{width:76px; height:76px; border-radius:19px; box-shadow:var(--shadow)}
-  .brandrow h1{font-size:1.7rem; margin:0; letter-spacing:-.4px}
-  .brandrow h1 b{color:var(--tangerine)}
-  .brandrow p{margin:2px 0 0; color:var(--ink2); font-weight:600}
-  .hero h2{font-size:clamp(1.8rem,4.6vw,2.9rem); line-height:1.12; margin:.2em 0 .35em; letter-spacing:-1px; max-width:18ch}
-  .hero .lede{font-size:1.12rem; color:var(--ink2); max-width:60ch; margin:0}
-  .cta{display:inline-flex; align-items:center; gap:9px; margin-top:26px; padding:14px 24px; border-radius:999px;
-    background:linear-gradient(135deg,#fb8a3c,#f2620e); color:#fff; font-weight:800; box-shadow:var(--shadow); border:1px solid rgba(255,255,255,.5)}
-  .cta:hover{text-decoration:none; filter:brightness(1.03)}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
 
-  section{padding:58px 0}
-  section h3{font-size:1.5rem; letter-spacing:-.3px; margin:0 0 8px}
-  .sub{color:var(--muted); margin:0 0 28px; max-width:62ch}
+/* nav */
+nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(18px); -webkit-backdrop-filter:saturate(180%) blur(18px);
+  background:color-mix(in srgb,var(--cream) 72%,transparent); border-bottom:1px solid var(--line)}
+nav .row{display:flex; align-items:center; gap:16px; height:64px}
+.brand{display:flex; align-items:center; gap:11px; font-weight:800; letter-spacing:-.3px; text-decoration:none; color:var(--ink); font-size:18px}
+.brand img{width:34px;height:34px;border-radius:10px;box-shadow:0 6px 16px -6px rgba(200,132,26,.7)}
+.brand b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav .links{margin-left:auto; display:flex; gap:6px}
+nav .links a{color:var(--ink2); text-decoration:none; font-weight:600; font-size:14.5px; padding:9px 13px; border-radius:11px; transition:.2s}
+nav .links a:hover{color:var(--ink); background:color-mix(in srgb,var(--gold) 14%,transparent)}
+@media(max-width:680px){nav .links{display:none}}
 
-  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(248px,1fr)); gap:18px}
-  .card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:22px 22px 20px; box-shadow:var(--shadow)}
-  .card .ic{width:42px; height:42px; border-radius:12px; display:grid; place-items:center; font-size:21px; margin-bottom:13px; background:var(--tangerine-soft)}
-  .card h4{margin:0 0 5px; font-size:1.06rem}
-  .card p{margin:0; color:var(--ink2); font-size:.97rem}
+/* hero */
+header{position:relative; padding:74px 0 56px; text-align:center}
+.eyebrow{display:inline-flex; align-items:center; gap:7px; font-weight:700; font-size:12.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--gold-deep); background:color-mix(in srgb,var(--gold) 16%,transparent); padding:7px 14px; border-radius:999px; border:1px solid var(--line)}
+.coin{width:128px;height:128px;margin:0 auto 26px; border-radius:30px; position:relative; will-change:transform; transition:transform .15s ease-out}
+.coin img{width:100%;height:100%;border-radius:30px; box-shadow:0 30px 70px -26px rgba(200,120,20,.8), 0 0 0 1px rgba(255,255,255,.18) inset; animation:bob 5s ease-in-out infinite}
+.coin::after{content:"";position:absolute;inset:-18% -18% -34%;background:radial-gradient(circle,rgba(242,169,59,.55),transparent 66%);filter:blur(26px);z-index:-1;animation:pulse 5s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes pulse{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
+h1{font-family:Fraunces,serif; font-weight:600; font-size:clamp(40px,7vw,72px); line-height:1.02; letter-spacing:-.02em; margin:18px 0 10px}
+h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{max-width:640px; margin:0 auto; font-size:clamp(16px,2.3vw,20px); color:var(--ink2)}
+.zh{color:var(--muted); font-size:.92em}
+.cta-row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:30px}
+.btn{display:inline-flex; align-items:center; gap:9px; font-weight:700; font-size:15.5px; text-decoration:none; padding:14px 24px; border-radius:14px; transition:.22s; border:1px solid transparent}
+.btn.primary{color:#fff; background:var(--grad); box-shadow:0 16px 36px -14px rgba(242,98,14,.7); position:relative; overflow:hidden}
+.btn.primary::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.5),transparent 60%);transform:translateX(-120%);transition:.6s}
+.btn.primary:hover{transform:translateY(-2px); box-shadow:0 22px 46px -16px rgba(242,98,14,.8)}
+.btn.primary:hover::after{transform:translateX(120%)}
+.btn.ghost{color:var(--ink); background:var(--glass); border-color:var(--glass-brd); backdrop-filter:blur(10px)}
+.btn.ghost:hover{transform:translateY(-2px); border-color:var(--gold)}
 
-  .faq{max-width:760px}
-  details{background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:4px 20px; margin-bottom:12px; box-shadow:var(--shadow)}
-  details[open]{border-color:var(--line2)}
-  summary{cursor:pointer; font-weight:700; padding:16px 0; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:14px}
-  summary::-webkit-details-marker{display:none}
-  summary::after{content:"+"; color:var(--tangerine); font-weight:800; font-size:1.3rem}
-  details[open] summary::after{content:"–"}
-  details .a{padding:0 0 18px; color:var(--ink2)}
+/* trust strip */
+.trust{display:flex; gap:10px 30px; justify-content:center; flex-wrap:wrap; margin-top:34px; color:var(--ink2); font-weight:600; font-size:14px}
+.trust span{display:inline-flex;align-items:center;gap:7px}
+.trust .dot{color:var(--gold-deep)}
 
-  .contact{background:linear-gradient(160deg,#fff6e8,#ffe9c8); border:1px solid var(--line2); border-radius:24px; padding:38px 30px; text-align:center; box-shadow:var(--shadow-lg)}
-  .contact h3{margin:0 0 6px}
-  .mail{display:inline-block; margin-top:14px; font-size:1.15rem; font-weight:800; color:var(--tangerine-ink)}
+/* sections */
+section{padding:64px 0}
+.head{max-width:680px; margin:0 auto 40px; text-align:center}
+.head h2{font-family:Fraunces,serif; font-weight:600; font-size:clamp(28px,4.2vw,42px); letter-spacing:-.02em; margin:12px 0 8px}
+.head p{color:var(--ink2); font-size:17px; margin:0}
 
-  .privacy{background:var(--panel); border:1px solid var(--line); border-radius:24px; padding:36px 30px; box-shadow:var(--shadow)}
-  .privacy h4{margin:22px 0 6px; font-size:1.08rem}
-  .privacy ul{margin:6px 0 0; padding-left:20px; color:var(--ink2)}
-  .privacy li{margin:5px 0}
-  .badge{display:inline-flex; align-items:center; gap:7px; background:var(--tangerine-soft); color:var(--tangerine-ink); font-weight:800; font-size:.82rem; padding:7px 13px; border-radius:999px; margin-bottom:8px}
+/* glass cards grid */
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:18px}
+.card{background:var(--glass); border:1px solid var(--glass-brd); border-radius:var(--r); padding:24px; backdrop-filter:blur(16px) saturate(160%); -webkit-backdrop-filter:blur(16px) saturate(160%); box-shadow:var(--shadow); transition:transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s; position:relative; overflow:hidden}
+.card::before{content:"";position:absolute;inset:0 0 auto;height:2px;background:var(--grad);opacity:0;transition:.3s}
+.card:hover{transform:translateY(-6px)}
+.card:hover::before{opacity:1}
+.ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;font-size:25px;margin-bottom:14px;
+  background:color-mix(in srgb,var(--gold) 18%,var(--paper)); border:1px solid var(--line)}
+.card h4{margin:0 0 6px;font-size:17.5px;font-weight:700;letter-spacing:-.01em}
+.card p{margin:0;color:var(--ink2);font-size:14.6px}
 
-  footer{padding:40px 0 56px; color:var(--muted); border-top:1px solid var(--line); text-align:center; font-size:.92rem}
-  footer a{color:var(--ink2)}
-  @media (max-width:560px){ .brandrow img{width:60px;height:60px} section{padding:46px 0} }
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;counter-reset:s}
+.step{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px;position:relative}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:Fraunces,serif;font-size:40px;font-weight:600;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:block;margin-bottom:8px}
+.step h4{margin:0 0 6px;font-size:18px}
+.step p{margin:0;color:var(--ink2);font-size:14.6px}
+
+/* faq */
+.faq{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+details{background:var(--glass);border:1px solid var(--glass-brd);border-radius:16px;padding:4px 20px;backdrop-filter:blur(12px);transition:.25s}
+details[open]{box-shadow:var(--shadow)}
+summary{cursor:pointer;list-style:none;font-weight:700;font-size:16px;padding:16px 0;display:flex;justify-content:space-between;align-items:center;gap:14px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:22px;color:var(--gold-deep);transition:.3s;font-weight:400}
+details[open] summary::after{transform:rotate(45deg)}
+details .a{padding:0 0 18px;color:var(--ink2);font-size:15px}
+
+/* privacy */
+.privacy{max-width:820px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:clamp(26px,5vw,52px);box-shadow:var(--shadow)}
+.privacy .badge{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:13px;color:var(--gold-deep);background:color-mix(in srgb,var(--gold) 15%,transparent);padding:8px 15px;border-radius:999px;border:1px solid var(--line)}
+.privacy h3{font-family:Fraunces,serif;font-weight:600;font-size:30px;letter-spacing:-.02em;margin:16px 0 4px}
+.privacy h4{margin:30px 0 8px;font-size:17px;font-weight:700;display:flex;align-items:center;gap:9px}
+.privacy h4 .pi{color:var(--gold-deep)}
+.privacy p,.privacy li{color:var(--ink2);font-size:15.3px}
+.privacy ul{margin:8px 0 0;padding-left:20px}
+.privacy li{margin:7px 0}
+.privacy .pill{display:inline-block;background:color-mix(in srgb,var(--gold) 12%,transparent);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-weight:700;font-size:13.5px;color:var(--ink);margin:2px 4px 2px 0}
+.privacy .updated{color:var(--muted);font-size:13.5px;margin:6px 0 0}
+
+/* contact */
+.contact{max-width:720px;margin:0 auto;text-align:center;background:var(--grad);border-radius:28px;padding:clamp(30px,5vw,52px);color:#fff;box-shadow:0 30px 70px -28px rgba(242,98,14,.7);position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 0%,rgba(255,255,255,.35),transparent 55%)}
+.contact h3{font-family:Fraunces,serif;font-weight:600;font-size:clamp(26px,4vw,38px);margin:8px 0 8px;position:relative}
+.contact p{margin:0 auto;max-width:480px;color:rgba(255,255,255,.92);position:relative}
+.mail{display:inline-flex;align-items:center;gap:9px;margin-top:20px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:14px 26px;border-radius:14px;backdrop-filter:blur(8px);transition:.22s;position:relative}
+.mail:hover{background:rgba(255,255,255,.28);transform:translateY(-2px)}
+
+footer{padding:48px 0 60px;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:13.5px}
+footer .fbrand{display:inline-flex;align-items:center;gap:9px;font-weight:800;color:var(--ink);text-decoration:none;margin-bottom:10px}
+footer .fbrand img{width:26px;height:26px;border-radius:8px}
+footer a{color:var(--ink2);text-decoration:none}
+footer .flinks{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin:10px 0 16px}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
+<div class="mesh"><i></i><i></i><i></i></div>
+<div class="grain"></div>
 
-<header class="hero">
-  <div class="hero-glow"></div>
-  <div class="container">
-    <div class="brandrow">
-      <img src="icon.png" alt="G+Money icon">
-      <div>
-        <h1><b>G+</b>Money</h1>
-        <p>Travel currency &amp; expenses · <span class="zh">旅遊換匯與記帳</span></p>
-      </div>
+<nav>
+  <div class="wrap row">
+    <a class="brand" href="#top"><img src="icon.png?v=coin" alt="G+Money"><span><b>G+</b>Money</span></a>
+    <div class="links">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#contact">Contact</a>
     </div>
-    <p class="eyebrow">Support Center</p>
-    <h2>Help, answers &amp; your privacy — all in one place.</h2>
-    <p class="lede">G+Money converts currencies and tracks every trip expense, fully offline. Need a hand or want to know how your data is handled? You're in the right spot.</p>
-    <a class="cta" href="#contact">✉️ Contact support</a>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <div class="coin" id="coin"><img src="icon.png?v=coin" alt="G+Money icon"></div>
+    <span class="eyebrow">✦ Support &amp; Privacy Center</span>
+    <h1>Travel money,<br><span class="g">beautifully simple.</span></h1>
+    <p class="lede">G+Money converts currencies and tracks every trip expense — fully offline, completely private. <span class="zh">旅遊換匯與記帳，離線、私密、優雅。</span></p>
+    <div class="cta-row">
+      <a class="btn primary" href="https://apps.apple.com/app/id6755782939"> Download on the App Store</a>
+      <a class="btn ghost" href="#contact">✉︎ Contact support</a>
+    </div>
+    <div class="trust">
+      <span><span class="dot">●</span> No account</span>
+      <span><span class="dot">●</span> No tracking</span>
+      <span><span class="dot">●</span> Zero data collected</span>
+      <span><span class="dot">●</span> Works offline</span>
+    </div>
   </div>
 </header>
 
-<section>
-  <div class="container">
-    <p class="eyebrow">Quick start</p>
-    <h3>Getting the most out of G+Money</h3>
-    <p class="sub">Set it once, then log as you go — even with no signal.</p>
+<section id="features">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Everything you need</span>
+      <h2>Crafted for the way you travel</h2>
+      <p>Powerful, private and delightfully quick — every feature works with no signal.</p>
+    </div>
     <div class="grid">
-      <div class="card"><div class="ic">💱</div><h4>Live or manual rates</h4><p>Rates update automatically when you're online, or tap the rate bar to set the exact rate you got. Both work offline.</p></div>
-      <div class="card"><div class="ic">✈️</div><h4>100% offline</h4><p>No Wi‑Fi, no data, no problem. Everything is computed and stored on your device.</p></div>
-      <div class="card"><div class="ic">🧾</div><h4>Log by category</h4><p>Add what you spent in the local currency; G+Money shows it in your home currency and sorts it by category.</p></div>
-      <div class="card"><div class="ic">🧳</div><h4>Trips &amp; events</h4><p>Group expenses by trip or event — each with its own icon and colour. Summaries and exports are organised by trip, or leave it unassigned.</p></div>
-      <div class="card"><div class="ic">🎯</div><h4>Daily limit</h4><p>Tap “Set daily limit” on the Convert screen to track today's spending against a cap you choose.</p></div>
-      <div class="card"><div class="ic">📊</div><h4>Summary &amp; export</h4><p>Filter by category and date in the Summary tab, then export to text or CSV to share or keep.</p></div>
-      <div class="card"><div class="ic">🌐</div><h4>17 languages</h4><p>The app auto‑detects your language and you can switch any time in Settings.</p></div>
+      <div class="card reveal"><div class="ic">💱</div><h4>Live or manual rates</h4><p>Rates refresh automatically online, or tap the rate bar to lock the exact rate you got. Both work offline.</p></div>
+      <div class="card reveal d1"><div class="ic">✈️</div><h4>100% offline</h4><p>No Wi‑Fi, no data, no problem. Everything is computed and stored privately on your device.</p></div>
+      <div class="card reveal d2"><div class="ic">🧳</div><h4>Trips &amp; events</h4><p>Group expenses by trip or event — each with its own icon and colour. Summaries and exports stay organised, or leave it unassigned.</p></div>
+      <div class="card reveal"><div class="ic">🧾</div><h4>Smart categories</h4><p>Log spending in the local currency; see it instantly in your home currency, sorted by category. Add your own anytime.</p></div>
+      <div class="card reveal d1"><div class="ic">🎯</div><h4>Daily limit</h4><p>Set a daily limit and watch today's spending track against it — with how much is left, at a glance.</p></div>
+      <div class="card reveal d2"><div class="ic">📊</div><h4>Summary &amp; export</h4><p>Filter by trip, category and date, then export to text or CSV — grouped by trip — to share or keep.</p></div>
+      <div class="card reveal"><div class="ic">🌐</div><h4>17 languages</h4><p>Auto‑detects your language with manual switching anytime, and supports 50+ world currencies.</p></div>
+      <div class="card reveal d1"><div class="ic">🔒</div><h4>Private by design</h4><p>No account, no sign‑up, no analytics, no ads. Your data never leaves your device.</p></div>
     </div>
   </div>
 </section>
 
-<section style="padding-top:0">
-  <div class="container">
-    <p class="eyebrow">FAQ</p>
-    <h3>Frequently asked questions</h3>
-    <div class="faq" style="margin-top:22px">
-      <details><summary>How do I change my home currency?</summary><div class="a">Open Settings (top‑right gear) → Home currency, and pick from 50+ world currencies. Every total updates instantly.</div></details>
-      <details><summary>Do exchange rates work without internet?</summary><div class="a">Yes. G+Money caches the latest rates so conversions keep working offline. You can also set a manual rate by tapping the rate bar on the Convert screen.</div></details>
-      <details><summary>How do I set a daily limit?</summary><div class="a">On the Convert screen, tap “Set daily limit” in the summary card and enter an amount. You'll see today's spending tracked against it, with how much is left.</div></details>
-      <details><summary>Can I add my own expense categories?</summary><div class="a">Yes — on the Convert screen, tap the dashed “+ Add category” chip at the start of the category row (or add one in Settings). New categories appear first.</div></details>
-      <details><summary>What are trips &amp; events?</summary><div class="a">Create a trip or event (each with its own icon and colour), then tag expenses to it on the Convert screen. The Summary groups and subtotals by trip, and exports include it. Prefer not to use them? Just leave it set to “No trip”.</div></details>
-      <details><summary>How do I export or back up my data?</summary><div class="a">In the Summary tab, use Export (text) or CSV to share your records — they're grouped by trip/event so everything stays organised. For a full backup, use Settings → Backup, and Restore to import it back.</div></details>
-      <details><summary>Is there a subscription?</summary><div class="a">No. G+Money is a one‑time purchase — pay once and it's yours, with no subscriptions, no ads and no in‑app purchases.</div></details>
+<section id="how" style="padding-top:8px">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Quick start</span>
+      <h2>Set it once, log as you go</h2>
+      <p>Three taps and you're tracking — even at 30,000 feet.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><h4>Pick your currencies</h4><p>Choose your home currency in Settings and the local one on the Convert screen. Rates load automatically.</p></div>
+      <div class="step reveal d1"><h4>Choose a trip, then log</h4><p>Pick the trip or event, enter what you spent in the local currency, tag a category, and add it.</p></div>
+      <div class="step reveal d2"><h4>Review &amp; export</h4><p>Open the Summary to see totals by trip and category, then export to text or CSV whenever you like.</p></div>
     </div>
   </div>
 </section>
 
-<section style="padding-top:0">
-  <div class="container">
-    <div class="contact" id="contact">
-      <p class="eyebrow" style="color:var(--tangerine)">We're here to help</p>
-      <h3>Contact us</h3>
-      <p style="margin:0; color:var(--ink2)">Questions, feedback or a feature request? We usually reply within 1–2 days.</p>
-      <a class="mail" href="mailto:hourstag.app@gmail.com?subject=G%2BMoney%20Support">hourstag.app@gmail.com</a>
+<section id="faq" style="padding-top:8px">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Answers</span>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq">
+      <details class="reveal"><summary>How do I change my home currency?</summary><div class="a">Open Settings (top‑right gear) → Home currency, and pick from 50+ world currencies. Every total updates instantly.</div></details>
+      <details class="reveal"><summary>Do exchange rates work without internet?</summary><div class="a">Yes. G+Money caches the latest rates so conversions keep working offline. You can also set a manual rate by tapping the rate bar on the Convert screen.</div></details>
+      <details class="reveal"><summary>What are trips &amp; events?</summary><div class="a">Create a trip or event — each with its own icon and colour — then tag expenses to it on the Convert screen. The Summary groups and subtotals by trip, and exports include it. Prefer not to use them? Just leave it set to “No trip”.</div></details>
+      <details class="reveal"><summary>How do I set a daily limit?</summary><div class="a">On the Convert screen, tap “Set daily limit” in the summary card and enter an amount. You'll see today's spending tracked against it, with how much is left.</div></details>
+      <details class="reveal"><summary>Can I add my own expense categories?</summary><div class="a">Yes — on the Convert screen, tap the dashed “+ Add category” chip at the start of the category row (or add one in Settings). New categories appear first, each with its own icon and colour.</div></details>
+      <details class="reveal"><summary>How do I export or back up my data?</summary><div class="a">In the Summary tab, use Export (text) or CSV to share your records — grouped by trip/event. For a full backup, use Settings → Backup, and Restore to import it back.</div></details>
+      <details class="reveal"><summary>Is there a subscription?</summary><div class="a">No. G+Money is a one‑time purchase — pay once and it's yours, with no subscriptions, no ads and no in‑app purchases.</div></details>
     </div>
   </div>
 </section>
 
-<section style="padding-top:0" id="privacy">
-  <div class="container">
-    <div class="privacy">
+<section id="privacy" style="padding-top:8px">
+  <div class="wrap">
+    <div class="privacy reveal">
       <span class="badge">🔒 Privacy first</span>
-      <h3 style="margin-top:4px">Privacy Policy</h3>
-      <p style="color:var(--muted); margin:0 0 6px">Last updated: 17 June 2026</p>
-      <p style="color:var(--ink2)">G+Money is built to be private by design. The short version: <strong>we don't collect anything.</strong></p>
+      <h3>Privacy Policy</h3>
+      <p class="updated">Effective: 18 June 2026 · Applies to G+Money for iOS</p>
+      <p style="margin-top:14px;font-size:16.5px;color:var(--ink)">G+Money is built to be private by design. The short version: <strong>we don't collect anything.</strong> There is no account, no sign‑up and no tracking of any kind.</p>
 
-      <h4>What we collect</h4>
+      <div style="margin:18px 0 4px">
+        <span class="pill">No data collected</span><span class="pill">No account</span><span class="pill">No analytics</span><span class="pill">No ads</span><span class="pill">No third‑party SDKs</span><span class="pill">On‑device only</span>
+      </div>
+
+      <h4><span class="pi">①</span> Information we collect</h4>
       <ul>
-        <li><strong>Nothing.</strong> G+Money has no account system and no sign‑up. We do not collect, transmit or sell any personal information.</li>
-        <li>Your expenses, rates, categories and settings are stored <strong>only on your device</strong>.</li>
+        <li><strong>None.</strong> G+Money does not collect, transmit, sell, rent or share any personal information or usage data.</li>
+        <li>We have no servers that store your information and no account system. We cannot see your data.</li>
       </ul>
 
-      <h4>Network use</h4>
+      <h4><span class="pi">②</span> Information stored on your device</h4>
       <ul>
-        <li>The only optional network request is fetching current exchange rates. This sends no personal data — just a request for public rate information.</li>
-        <li>With automatic rates turned off, the app makes no network requests at all.</li>
+        <li>Your expenses, trips/events, exchange rates, custom categories, language, theme and preferences are stored <strong>only on your device</strong> using local storage.</li>
+        <li>This data never leaves your iPhone unless <em>you</em> choose to export or back it up (e.g. to Files, AirDrop or a message you initiate).</li>
       </ul>
 
-      <h4>No tracking</h4>
+      <h4><span class="pi">③</span> Network use</h4>
       <ul>
-        <li>No analytics, no advertising identifiers, no third‑party trackers or SDKs.</li>
-        <li>We have no way to identify you or your device.</li>
+        <li>The only optional network request is fetching current <strong>public exchange rates</strong>. This request contains no personal data — it simply asks for rate information and works the same for everyone.</li>
+        <li>If you stay offline, G+Money uses the last cached rates and makes no network requests at all.</li>
       </ul>
 
-      <h4>Your data &amp; control</h4>
+      <h4><span class="pi">④</span> No tracking or third parties</h4>
       <ul>
-        <li>You can export your data (text/CSV) or delete it any time from within the app. Deleting the app removes all of its data from your device.</li>
+        <li>G+Money contains <strong>no analytics, no advertising, no trackers and no third‑party SDKs</strong>. We do not use cookies or device identifiers for tracking.</li>
+        <li>We do not engage in “tracking” as defined by Apple's App Tracking Transparency, and we never ask for that permission.</li>
       </ul>
 
-      <h4>Children's privacy</h4>
+      <h4><span class="pi">⑤</span> Children's privacy</h4>
       <ul>
-        <li>G+Money does not collect data from anyone, including children.</li>
+        <li>Because G+Money collects no personal data from anyone, it collects none from children. The app is safe for users of all ages and is not directed at gathering information from children under 13/16.</li>
       </ul>
 
-      <h4>Contact</h4>
+      <h4><span class="pi">⑥</span> Data retention &amp; your control</h4>
       <ul>
-        <li>Questions about this policy? Email <a href="mailto:hourstag.app@gmail.com?subject=G%2BMoney%20Privacy">hourstag.app@gmail.com</a>.</li>
+        <li>Your data stays on your device until you delete it. You are always in full control: edit or delete any record, clear all data in the app, or remove everything by deleting the app.</li>
+        <li>Because data is local, there is nothing for us to retain, access or delete on our side.</li>
       </ul>
+
+      <h4><span class="pi">⑦</span> App Store privacy label</h4>
+      <ul>
+        <li>Consistent with our App Store privacy details, G+Money is marked <strong>“Data Not Collected.”</strong></li>
+      </ul>
+
+      <h4><span class="pi">⑧</span> Changes to this policy</h4>
+      <ul>
+        <li>If this policy ever changes, we'll update the “Effective” date above and post the revised version on this page.</li>
+      </ul>
+
+      <h4><span class="pi">⑨</span> Contact</h4>
+      <ul>
+        <li>Questions about your privacy? Email <a href="mailto:hourstag.app@gmail.com?subject=G%2BMoney%20Privacy" style="color:var(--gold-deep);font-weight:700">hourstag.app@gmail.com</a> and we'll reply within 1–2 days.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:8px">
+  <div class="wrap">
+    <div class="contact reveal">
+      <span class="eyebrow" style="background:rgba(255,255,255,.2);color:#fff;border-color:rgba(255,255,255,.3);position:relative">We're here to help</span>
+      <h3>Get in touch</h3>
+      <p>Questions, feedback or a feature request? We usually reply within 1–2 days. <span style="opacity:.85">有任何問題或建議都歡迎來信。</span></p>
+      <a class="mail" href="mailto:hourstag.app@gmail.com?subject=G%2BMoney%20Support">✉︎ hourstag.app@gmail.com</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="container">
-    <p>© 2026 G+Money · <a href="#privacy">Privacy</a> · <a href="mailto:hourstag.app@gmail.com">Support</a></p>
+  <div class="wrap">
+    <a class="fbrand" href="#top"><img src="icon.png?v=coin" alt=""><span><b style="background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent">G+</b>Money</span></a>
+    <div class="flinks">
+      <a href="#features">Features</a><a href="#faq">FAQ</a><a href="#privacy">Privacy</a><a href="#contact">Contact</a>
+      <a href="https://apps.apple.com/app/id6755782939">App Store</a>
+    </div>
+    <div>© <span id="yr"></span> G+Money · Travel currency &amp; expenses · Made with care.</div>
   </div>
 </footer>
 
+<script>
+// reveal on scroll
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// staggered cards
+document.querySelectorAll('.grid .card').forEach((c,i)=>{c.style.transitionDelay=(i%4*0.06)+'s'});
+// hero coin 3D tilt
+const coin=document.getElementById('coin');
+if(coin&&matchMedia('(pointer:fine)').matches){
+  window.addEventListener('mousemove',e=>{
+    const x=(e.clientX/innerWidth-.5),y=(e.clientY/innerHeight-.5);
+    coin.style.transform=`perspective(700px) rotateY(${x*16}deg) rotateX(${-y*16}deg)`;
+  });
+  window.addEventListener('mouseleave',()=>coin.style.transform='');
+}
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
