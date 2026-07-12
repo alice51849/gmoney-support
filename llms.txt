@@ -1,0 +1,16 @@
+# G+Money — official support
+
+> Official support, privacy, App Store, and guide links for G+Money.
+
+## Apps
+
+- [G+Money on the App Store](https://apps.apple.com/app/id6755782939)
+- [G+Money independent guide](https://alice51849.github.io/ios-app-guide/guides/gmoney.html)
+
+## Support
+
+- [Official support site](https://alice51849.github.io/gmoney-support/)
+
+## Portfolio
+
+- [All public iOS apps](https://alice51849.github.io/ios-app-guide/apps/index.html)
