@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>出差外幣花費怎麼記、怎麼報帳？每筆換算台幣、依出差行程分組、匯出 CSV</title>
+<meta name="description" content="出國出差的計程車、餐費、住宿雜費都用外幣付，回來報帳最怕對不起來。教你用當地幣別記帳、立刻換算成台幣、每趟出差分開小計，回國匯出 CSV 或純文字交給會計，沒有網路也能記。">
+<link rel="canonical" href="https://open.cait518.cc/gmoney-support/business-trip-expense-report.zh-Hant.html">
+<meta property="og:title" content="出差外幣花費怎麼記、怎麼報帳？每筆換算台幣、依出差行程分組、匯出 CSV">
+<meta property="og:description" content="出國出差的計程車、餐費、住宿雜費都用外幣付，回來報帳最怕對不起來。教你用當地幣別記帳、立刻換算成台幣、每趟出差分開小計，回國匯出 CSV 或純文字交給會計，沒有網路也能記。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://open.cait518.cc/gmoney-support/business-trip-expense-report.zh-Hant.html">
+<meta name="apple-itunes-app" content="app-id=6755782939">
+<style>
+:root{color-scheme:light dark;--bg:#fbfaf7;--fg:#1d1d1f;--muted:#5f6368;--line:rgba(128,128,128,.22);--accent:#2f6fde;--card:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#141416;--fg:#ececf0;--muted:#a3a3ab;--card:#1d1d21;--accent:#7aa7ff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","PingFang TC","Noto Sans CJK TC","Apple SD Gothic Neo",Roboto,sans-serif}
+a{color:var(--accent)}
+.helpdoc{max-width:820px;margin:0 auto;padding:28px 16px 64px}
+.helpdoc h1{font-size:clamp(26px,4.4vw,36px);line-height:1.3;margin:.2em 0 .4em}
+.helpdoc h2{font-size:clamp(19px,2.8vw,24px);margin:2.1em 0 .6em;scroll-margin-top:16px}
+.helpdoc h3{font-size:17px;margin:1.5em 0 .35em}
+.helpdoc .lede{font-size:17.5px;color:var(--muted);margin:0 0 1.4em}
+.helpdoc .hd-nav{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;margin:0 0 20px}
+.helpdoc .hd-toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px;padding:0;list-style:none}
+.helpdoc .hd-toc a{display:inline-block;padding:5px 12px;border:1px solid var(--line);border-radius:999px;font-size:13.5px;text-decoration:none}
+.helpdoc .tbl{overflow-x:auto;margin:.8em 0}
+.helpdoc table{width:100%;border-collapse:collapse;font-size:15px}
+.helpdoc th,.helpdoc td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.helpdoc th{font-weight:650;white-space:nowrap}
+.helpdoc .box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:1em 0}
+.helpdoc .cta{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:2.4em 0 1em}
+.helpdoc .cta a.btn{display:inline-block;margin:6px 0;padding:11px 20px;border-radius:999px;background:var(--accent);color:#fff;font-weight:650;text-decoration:none}
+.helpdoc .hd-q{margin:1.4em 0 .3em;font-weight:650;font-size:16.5px}
+.helpdoc .hd-a{margin:0 0 .2em}
+.helpdoc .hd-note{font-size:13px;color:var(--muted);margin-top:2.6em;border-top:1px solid var(--line);padding-top:14px}
+.helpdoc ul,.helpdoc ol{padding-left:1.25em}
+.helpdoc li{margin:.3em 0}
+@media print{.hd-nav,.cta,.hd-toc{display:none}body{background:#fff;color:#000}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "出差外幣花費怎麼記、怎麼報帳？每筆換算台幣、依出差行程分組、匯出 CSV", "description": "出國出差的計程車、餐費、住宿雜費都用外幣付，回來報帳最怕對不起來。教你用當地幣別記帳、立刻換算成台幣、每趟出差分開小計，回國匯出 CSV 或純文字交給會計，沒有網路也能記。", "inLanguage": "zh-Hant", "mainEntityOfPage": "https://open.cait518.cc/gmoney-support/business-trip-expense-report.zh-Hant.html", "datePublished": "2026-11-06", "dateModified": "2026-11-06"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "zh-Hant", "mainEntity": [{"@type": "Question", "name": "出差途中沒有網路，還能記帳和換算嗎？", "acceptedAnswer": {"@type": "Answer", "text": "可以。G+Money 有網路時自動更新匯率，沒有訊號時用最近一次的匯率或你自訂的匯率繼續換算，記帳本身不需要連線。"}}, {"@type": "Question", "name": "一趟出差去了兩個國家，幣別不同怎麼辦？", "acceptedAnswer": {"@type": "Answer", "text": "每筆都用實際付款的貨幣記錄，App 內建 50 種貨幣換算，總額即時顯示成母國貨幣（例如台幣），整趟出差一起小計。"}}, {"@type": "Question", "name": "出差的開銷會和自己的日常花費混在一起嗎？", "acceptedAnswer": {"@type": "Answer", "text": "不會。每筆消費可以指定到對應的旅程或活動，也可以不指定、當作日常消費；總覽與匯出都依旅程分組並顯示小計。"}}, {"@type": "Question", "name": "報帳時要交什麼格式？", "acceptedAnswer": {"@type": "Answer", "text": "可以把該趟出差匯出成 CSV 或純文字，CSV 方便貼進試算表整理，純文字方便直接傳給會計或主管。"}}, {"@type": "Question", "name": "公司的出差紀錄會被上傳到別的地方嗎？", "acceptedAnswer": {"@type": "Answer", "text": "不會。無帳號、免註冊、不追蹤、無廣告，資料存在你的裝置上；開啟 iCloud 同步後也只存在你自己的 iCloud。"}}]}</script>
+<!-- ls-sharecard:start -->
+<meta property="og:site_name" content="G+Money: Spending &amp; Budget">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://open.cait518.cc/gmoney-support/assets/og.png?v=597ea2b49b">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="G+Money: Spending &amp; Budget — Daily Log, Planner &amp; Tracker">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="max-image-preview:large">
+<!-- ls-sharecard:end -->
+</head>
+<body>
+<p class="first-party-disclosure" data-first-party-disclosure="banner" role="note" style="margin:0;padding:8px 16px;background:#f3f4f6;color:#1f2937;border-bottom:1px solid #d1d5db;font-size:13px;line-height:1.5;text-align:center">本站由這些 App 的開發者 Lumi Studio 營運，介紹的是我們自己的 App。</p>
+<main class="helpdoc">
+<nav class="hd-nav"><a href="./">支援首頁</a><a href="help.zh-Hant.html">說明與常見問題</a><a href="travel-budget-multi-currency.zh-Hant.html">出國旅費怎麼記</a></nav>
+<h1>出差外幣花費怎麼記、怎麼報帳？</h1>
+<p class="lede">出國出差，計程車、午餐、地鐵票、住宿雜費全是外幣；回到台灣要報帳時，才發現收據一疊、匯率不知道用哪一天、自己的花費和公司的花費也混在一起。這一頁用出差的情境，整理一套<strong>當下就記、當下換算成台幣、每趟出差各自小計、回國直接匯出</strong>的做法。</p>
+<p><strong>本頁目錄</strong></p>
+<ul class="hd-toc"><li><a href="#pain">出差報帳最常卡在哪</a></li><li><a href="#flow">出差前、出差中、回國後三段做法</a></li><li><a href="#rates">匯率要用哪一個</a></li><li><a href="#faq">常見問題</a></li></ul>
+<h2 id="pain">出差報帳最常卡在哪</h2>
+<ul><li><strong>幣別換算</strong>：每筆都是當地貨幣，報帳單卻要填台幣，回國後一筆一筆查匯率很花時間。</li><li><strong>公私混在一起</strong>：同一趟出差裡，有公司要付的、也有自己逛街買的，事後很難分清楚。</li><li><strong>沒有網路</strong>：在機場、地鐵或客戶公司裡沒有訊號，需要連線的換算工具就打不開，乾脆不記。</li><li><strong>多國行程</strong>：一趟跑兩三個國家，幣別一多，手寫或試算表都容易出錯。</li></ul>
+<h2 id="flow">出差前、出差中、回國後三段做法</h2>
+<h3>出差前：替這趟出差建一個旅程</h3>
+<p>在 G+Money 建立一個旅程或活動，例如「大阪拜訪客戶」，挑一個專屬圖示與顏色。之後要報帳的每一筆都指定到這趟旅程；自己私人的花費可以不指定、當作日常消費，或另外建一個旅程分開記。也可以新增自訂分類，例如「交際費」「交通（報帳）」，搭配既有的餐飲、交通、住宿、雜費等分類。</p>
+<h3>出差中：付錢當下用當地貨幣記一筆</h3>
+<p>直接用當地貨幣輸入金額，G+Money 立刻換算成本國貨幣，畫面上即時顯示台幣總額。沒有訊號也能記：沒網路時會用最近一次的匯率，或你自訂的匯率繼續換算。如果公司有每日差旅上限，可以把它設成每日上限，隨時看今天還能花多少。</p>
+<h3>回國後：篩選、匯出、交出去</h3>
+<p>依旅程、分類與日期篩選，只留下這趟出差要報帳的部分，匯出成 CSV 或純文字。CSV 可以貼進試算表整理成報帳單，純文字可以直接傳給會計或主管。總覽與匯出都依旅程分組並顯示各旅程小計，一眼看到這趟出差合計多少台幣。</p>
+<div class="tbl"><table><thead><tr><th>出差情境</th><th>在 G+Money 怎麼做</th></tr></thead><tbody>
+<tr><td>同一趟跑兩個國家</td><td>每筆用實際付款的貨幣記，總額統一換算成台幣，同一個旅程一起小計</td></tr>
+<tr><td>公私花費要分開</td><td>報帳的指定到出差旅程，私人的不指定或放到另一個旅程</td></tr>
+<tr><td>公司規定的匯率</td><td>改用自訂匯率，讓記帳的台幣金額和報帳規則一致</td></tr>
+<tr><td>交報帳資料</td><td>依旅程篩選後匯出 CSV 或純文字</td></tr>
+</tbody></table></div>
+<h2 id="rates">匯率要用哪一個</h2>
+<p>G+Money 有網路時會自動更新匯率，這是很好的參考值；但很多公司規定報帳要用特定日期或特定銀行的匯率，或以信用卡帳單的實際入帳金額為準。這時可以在記帳時改用自訂匯率，讓 App 裡的台幣金額直接對上公司的規則，回國後就不用再重算一次。</p>
+<div class="cta">
+<p><strong>在 iPhone、Android 上直接做</strong>：G+Money 把 50 種貨幣換算和記帳放在同一個 App，依旅程分組、即時換算母國貨幣、匯出 CSV 或純文字，離線也能用；無帳號、不追蹤、無廣告，資料留在你的裝置上。支援淺色與深色，介面支援 44 種語言。</p>
+<p><a class="btn" href="https://apps.apple.com/app/id6755782939?ct=sqb1106_gmoney_zh-Hant">在 App Store 查看 G+Money：日常記帳·預算·匯率</a></p>
+<p><strong>使用 Android？</strong></p>
+<p><a class="btn" href="https://play.google.com/store/apps/details?id=com.caitlai.globi" rel="noopener" data-ls-play="cta">在 Google Play 查看 G+Money</a></p>
+</div>
+<h2 id="faq">常見問題</h2>
+<p class="hd-q">出差途中沒有網路，還能記帳和換算嗎？</p>
+<p class="hd-a">可以。G+Money 有網路時自動更新匯率，沒有訊號時用最近一次的匯率或你自訂的匯率繼續換算，記帳本身不需要連線。</p>
+<p class="hd-q">一趟出差去了兩個國家，幣別不同怎麼辦？</p>
+<p class="hd-a">每筆都用實際付款的貨幣記錄，App 內建 50 種貨幣換算，總額即時顯示成母國貨幣（例如台幣），整趟出差一起小計。</p>
+<p class="hd-q">出差的開銷會和自己的日常花費混在一起嗎？</p>
+<p class="hd-a">不會。每筆消費可以指定到對應的旅程或活動，也可以不指定、當作日常消費；總覽與匯出都依旅程分組並顯示小計。</p>
+<p class="hd-q">報帳時要交什麼格式？</p>
+<p class="hd-a">可以把該趟出差匯出成 CSV 或純文字，CSV 方便貼進試算表整理，純文字方便直接傳給會計或主管。</p>
+<p class="hd-q">公司的出差紀錄會被上傳到別的地方嗎？</p>
+<p class="hd-a">不會。無帳號、免註冊、不追蹤、無廣告，資料存在你的裝置上；開啟 iCloud 同步後也只存在你自己的 iCloud。</p>
+<div class="box">App 內的匯率是參考匯率，實際刷卡或換現金的匯率與手續費由銀行與換匯點決定，可能略有差異；報帳請以公司規定為準。本頁的功能說明整理自 App Store 商店頁文案。</div>
+<h2 id="related">相關教學</h2>
+<ul><li><a href="travel-budget-multi-currency.zh-Hant.html">出國旅費怎麼記？多幣別旅遊記帳與每日預算的實作方法</a></li></ul>
+<p class="hd-note">本頁由 G+Money 開發者 Lumi Studio 撰寫，並對照 App Store 商店頁內容核對。最後更新：2026-11-06。</p>
+</main>
+</body>
+</html>
