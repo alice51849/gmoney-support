@@ -10,6 +10,7 @@
 ## Support
 
 - [About the app: what it is, who it is for, pricing, differences](https://open.cait518.cc/gmoney-support/about-gmoney-app.html)
+- [Travel expense tracker with an offline currency converter](https://open.cait518.cc/gmoney-support/travel-expense-tracker-offline-currency.html)
 - [Help, FAQ and troubleshooting](https://open.cait518.cc/gmoney-support/help.html)
 - [Official support site](https://open.cait518.cc/gmoney-support/)
 
